@@ -1,0 +1,27 @@
+# Nuxt dev/build outputs
+template-src/.output
+template-src/.data
+template-src/.nuxt
+template-src/.nitro
+template-src/.cache
+template-src/dist
+
+# Node dependencies
+template-src/node_modules
+
+# Logs
+template-src/logs
+template-src/*.log
+
+# Misc
+template-src/.DS_Store
+template-src/.fleet
+template-src/.idea
+
+# Local env files
+template-src/.env
+template-src/.env.*
+template-src/!.env.example
+
+# php
+vendor/
