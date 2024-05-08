@@ -19,6 +19,7 @@ final class Sriping
 
     public function apiRoutes($router)
     {
+        header('Access-Control-Allow-Origin: *');
         $router->map('GET', '/sriping/', Rest::class . '@index');
         $router->map('GET', '/sriping/static', Rest::class . '@static');
     }

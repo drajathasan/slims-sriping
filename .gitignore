@@ -22,6 +22,7 @@ template-src/.idea
 template-src/.env
 template-src/.env.*
 template-src/!.env.example
+template-src/env.json
 
 # php
 vendor/
