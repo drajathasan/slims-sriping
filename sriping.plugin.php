@@ -17,4 +17,7 @@ if (str_replace(['.','v'], '', SENAYAN_VERSION_TAG) >= '961') {
         Plugins::hook('custom_api_route', 'apiRoutes');
         Plugins::hook(Plugins::CONTENT_BEFORE_LOAD, 'bootstrap');
     });
+
+    Plugins::menu('opac', 'sriping', __DIR__ . '/pages/sriping.inc.php');
+    // Plugins::registerCommand()
 }
