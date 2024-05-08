@@ -1,5 +1,22 @@
 <script setup>
-    import asset from '../assets/json/attribute.json'
+    // import asset from '../assets/json/attribute.json'
+    const {$api} = useNuxtApp()
+
+    const asset = reactive({
+        status: false,
+        detail: {}
+    })
+
+    try {
+        let response = await $api('static')
+        if (response.status) {
+            asset.status = true
+            asset.detail = response.data
+        }
+    } catch (error) {
+        
+    }
+    
 </script>
 
 <template>
@@ -8,13 +25,13 @@
         <div class="inline-flex">
             <a class="_o6689fn" href="/"
                 ><div class="hidden md:block">
-                    <div class="flex items-center justify-center gap-2">
-                        <img :src="asset.logo" width="40px" height="11px"/>
-                        <h1 class="font-bold text-2xl">{{ asset.name }}</h1>
+                    <div v-if="asset.status" class="flex items-center justify-center gap-2">
+                        <img :src="asset.detail.logo" width="40px" height="11px"/>
+                        <h1 class="font-bold text-xl">{{ asset.detail.name }}</h1>
                     </div>
                 </div>
                 <div class="block md:hidden">
-                    <img :src="asset.logo" width="40px" height="11px"/>
+                    <img :src="asset.detail.logo" width="40px" height="11px"/>
                 </div>
             </a>
         </div>
