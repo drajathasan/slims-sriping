@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "buildori": "nuxt build",
-    "build-sriping": "nuxi generate && node bin/build",
-    "dev": "nuxt dev",
+    "build-sriping": "nuxi generate && node bin/build.js",
+    "dev": "node bin/dev.js && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
